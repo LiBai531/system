@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:cache="http://www.springframework.org/schema/cache"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/cache 
+	http://www.springframework.org/schema/cache/spring-cache-3.2.xsd
+	http://www.springframework.org/schema/aop           
+	http://www.springframework.org/schema/aop/spring-aop-2.5.xsd            
+	http://www.springframework.org/schema/tx            
+	http://www.springframework.org/schema/tx/spring-tx-2.5.xsd 
+	">
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName">
+			<value>com.mysql.jdbc.Driver</value>
+		</property>
+		<property name="url">
+			<value>jdbc:mysql://127.0.0.1:3306/physics</value>
+		</property>
+		<property name="username" value="root" />
+		<property name="password" value="" />
+		<!-- 指定连接数据库连接池的初始化连接数 -->
+		<property name="initialSize" value="2" />
+		<!-- 最大连接数据库连接数 -->
+		<property name="maxActive" value="50" />
+		<!-- 最大等待连接中的数量 -->
+		<property name="maxIdle" value="50" />
+		<!-- 最小等待连接中的数量 -->
+		<property name="minIdle" value="2" />
+	</bean> 
+	<!-- 配置SessionFactory -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hiberate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.show_sql">true</prop><!-- 发布的时候注释掉 -->
+				<prop key="hibernate.format_sql">true</prop>
+				<prop key="generate_statistics">true</prop>
+				<prop key="cache.use_second_level_cache">true</prop>
+				<prop key="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</prop> 
+				<prop key="hibernate.cache.use_query_cache">true</prop>  
+			</props>
+		</property>
+		<property name="annotatedClasses">
+			<list>
+				<value>com.physics.entity.User</value>
+				<value>com.physics.entity.Content</value>
+				<value>com.physics.entity.News</value>
+				<value>com.physics.entity.ExperimentStudent</value>
+				<value>com.physics.entity.ExperimentInfo</value>
+				<value>com.physics.entity.ExperimentCount</value>
+				<value>com.physics.entity.Experiment</value>
+				<value>com.physics.entity.MenuFirst</value>
+				<value>com.physics.entity.MenuSecond</value>
+				<value>com.physics.entity.Attachment</value>
+				<value>com.physics.entity.Storage</value>
+			</list>
+		</property>
+	</bean>				
+	<!-- 配置一个事务管理器 -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- 事物管理配置 -->
+	<tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="false" />
+	<!-- 开启注解缓存 -->
+	<!-- <cache:annotation-driven /> -->
+	
+	<!-- cacheManager工厂类，指定ehcache.xml的位置 -->
+	<!-- <bean id="cacheManagerFactory"
+		class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+		<property name="configLocation" value="classpath:ehcache.xml"></property>
+		<property name="configLocation" value="/WEB-INF/config/dsep_ehcache.xml"></property>
+		<property name="shared" value="true"></property>
+	</bean> -->
+
+	<!-- 声明cacheManager -->
+	<!-- <bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager">
+		<property name="cacheManager" ref="cacheManagerFactory">
+		</property>
+	</bean> -->
+</beans>

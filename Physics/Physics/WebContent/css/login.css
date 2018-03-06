@@ -1,0 +1,250 @@
+@CHARSET "UTF-8";
+body
+{
+	margin:0px;
+}
+#header
+{
+	height:82px;
+	width: 732px;
+	margin: 118px auto 0 auto;
+	background:#FFFFFF url(../images/logo.png) repeat-x;
+}
+#main
+{
+	height:300px;
+	background:#FFFFFF url(../images/login-bg.png) repeat-x;
+}
+
+#form1
+{
+	width:340px;
+	margin:0px auto;
+	padding-top:30px;
+	padding-left:20px;
+}
+
+.inputbox
+{
+	margin:10px 0px;
+	padding:7px 17px;
+	position:relative;
+}
+
+.inputbox input
+{
+	margin-left:8px;
+	padding:5px 5px 5px 5px;
+	line-height:17px;
+	outline-style:none;
+	width:250px;
+	font-size: 15px;
+}
+
+
+.inputbox #user_checknum
+{
+	width:70px;
+}
+
+.icon-user
+{
+	display:block;
+	width:33px;
+	height:33px;
+	float:left;
+	background:url(../images/user.png) no-repeat left;
+}
+
+
+.icon-password
+{
+	display:block;
+	width:33px;
+	height:33px;
+	float:left;
+	background:url(../images/pwd.png) no-repeat left;
+}
+
+.icon-key
+{
+	display:block;
+	width:33px;
+	height:33px;
+	float:left;
+	background:url(../images/check.png) no-repeat left;
+}
+
+.inputbox a.button
+{
+	cursor:pointer;
+	display:block;
+	color:white;
+	width:80px;
+	line-height:32px;
+	text-decoration:none;
+	text-align:center;
+	background:#116dae;
+	position:absolute;
+	left:58px;
+}
+
+.inputbox a.button:hover
+{
+	background:#2786ca;
+}
+
+.inputbox a.button:active
+{
+	background:#0b5183;
+}
+
+#sub_right
+{
+	position:absolute;
+	left:150px;
+	top:7px;
+}
+
+#another
+{
+	color: #FFF;
+	text-decoration: none;
+	font-size: 13px;
+}
+
+label.error
+{
+	color: #FFF;
+	font-size: 13px;
+	display:block;
+	margin-left:40px;
+}
+
+div.reset-frame label.error
+{
+	color: blue;
+}
+
+
+#footer
+{
+	margin-top: 20px;
+	height:200px;
+}
+
+#footer p
+{
+	font-size: 10px;
+	color: #bbb;
+	line-height: 2em;
+	text-align: center;
+}
+
+#forget-pwd
+{
+	color: #FFF;
+	font-size: 14px;
+	position:relative;
+	left:140px;
+	top:8px;
+}
+#dialog{
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,.3);
+	z-index: 99998;
+	display:none;
+}
+#dialog .reset-frame{
+	width:480px;
+	height:180px;
+	position:fixed;
+	background:#fff;
+	margin:-210px 0 0 -220px;
+	top:50%;
+	left:50%;
+	text-align:center;
+	padding:30px 0 20px;
+	border-radius:4px;
+}
+#dialog .resetpwd-div{
+	width:246px;
+	margin:30px auto;
+	position:relative;
+}
+#dialog .reset-success{
+	display:none;
+	width:246px;
+	margin:60px auto;
+	position:relative;
+}
+#dialog .reset-failure{
+	display:none;
+	width:246px;
+	margin:60px auto;
+	position:relative;
+}
+#dialog .tips{
+	font-size:16px;
+	margin:10px auto;
+	text-align:center;
+}
+#dialog .forget-text{
+	font-size:16px;
+	color:#999;
+	margin:0 auto;
+	position:relative;
+	text-align:center;
+}
+#dialog .reset_form{
+	margin-top:10px;
+}
+#dialog .pwd_input{
+	margin-bottom:10px;
+	width:222px;
+	display: inline-block;
+	padding: 0 10px;
+	height: 30px;
+	font-size: 16px;
+	line-height: 1;
+	color: #777;
+	background: #FCFCFC;
+	border: 1px solid #CCC;
+	border-radius: 3px;
+}
+#dialog #reset-pwd{
+	font-size:16px;
+	padding:0 15px;
+	border:1px solid #116dae;
+	border-radius:3px;
+	height:30px;
+	line-height:30px;
+	background:#116dae;
+	color:#fff;
+	display:block;
+	cursor:pointer;
+}
+#dialog #reset-pwd:hover{
+	background:#2786ca;
+}
+#dialog .close{
+	width: 36px;
+	height: 36px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	cursor: pointer;
+}
+#dialog .close i{
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -10px 0 0 -10px;
+	background: url(../images/msg_close.png) 0 0 no-repeat;
+}

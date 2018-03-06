@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+	http://www.springframework.org/schema/beans/spring-beans.xsd"
+	default-lazy-init="true">
+
+
+	<bean name="userService" class="com.physics.service.base.impl.UserServiceImpl">
+		<property name="userDao" ref="userDao"></property>
+	</bean>
+	
+	<bean name="experimentInfoService" class="com.physics.service.base.impl.ExperimentInfoServiceImpl">
+		<property name="experimentInfoDao" ref="experimentInfoDao"></property>
+	</bean>
+	
+	<bean name="experimentService" class="com.physics.service.base.impl.ExperimentServiceImpl">
+		<property name="experimentDao" ref="experimentDao"></property>
+	</bean>
+	
+	<bean name="experimentCountService" class="com.physics.service.base.impl.ExperimentCountServiceImpl">
+		<property name="experimentCountDao" ref="experimentCountDao"></property>
+	</bean>
+	
+	<bean name="experimentStudentService" class="com.physics.service.base.impl.ExperimentStudentServiceImpl">
+		<property name="experimentStudentDao" ref="experimentStudentDao"></property>
+	</bean>
+	
+	<bean name="newsService" class="com.physics.service.base.impl.NewsServiceImpl">
+		<property name="newsDao" ref="newsDao"></property>
+	</bean>
+	
+	<bean name="menuFirstService" class="com.physics.service.base.impl.MenuFirstServiceImpl">
+		<property name="menuFirstDao" ref="menuFirstDao"></property>
+	</bean>
+	
+	<bean name="menuSecondService" class="com.physics.service.base.impl.MenuSecondServiceImpl">
+		<property name="menuSecondDao" ref="menuSecondDao"></property>
+	</bean>
+	
+	<bean name="storagePathService" class="com.physics.service.base.impl.StoragePathServiceImpl">
+		<property name="storageDao" ref="storageDao"></property>
+	</bean>
+	
+	<bean name="exportService" class="com.physics.service.base.file.impl.ExportServiceImpl">
+		<property name="userService" ref="userService"></property>
+	</bean>
+	
+	<bean name="attachmentService" class="com.physics.service.base.impl.AttachmentServiceImpl">
+		<property name="attachmentDao" ref="attachmentDao"></property>
+		<property name="storageDao" ref="storageDao"></property>
+	</bean>
+</beans>

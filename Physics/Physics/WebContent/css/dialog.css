@@ -1,0 +1,14 @@
+@CHARSET "UTF-8";
+.spot_check_div span{
+	color:#116dae;
+	margin-left:30px;
+	font-size:17px;
+	font-family:"Microsoft YaHei",Helvetica,Arial,sans-serif;
+	bottom:30px;
+}
+.spot_check_div p{
+	line-height:200%;
+	font-size:15px;
+	font-family:"Microsoft YaHei",Helvetica,Arial,sans-serif;
+	
+}

@@ -1,0 +1,165 @@
+/*jqgrid diff*/
+.ui-jqgrid .ui-jqgrid-view {
+	font-size: 14px !important; 
+}
+
+.ui-jqgrid .ui-jqgrid-title {
+	float: left;
+	margin: .1em 0 .2em;
+	font-size:16px !important;/*调整  */
+}
+.ui-jqgrid .ui-jqgrid-htable th {
+	height: auto !important;
+}
+
+.ui-jqgrid .ui-jqgrid-htable th div {
+	height: auto !important;
+}
+
+.ui-th-column,.ui-jqgrid .ui-jqgrid-htable th.ui-th-column {
+ 	white-space: inherit !important;
+}
+
+.ui-jqgrid .ui-jqgrid-sortable {
+	font-size:16px !important;
+}
+
+.ui-jqgrid .ui-jqgrid-btable {
+	font-size:16px !important;/*调整  */
+}
+
+/*修改表格字体字号*/
+.ui-jqgrid tr.jqgrow td {
+	font-family:"Microsoft YaHei" !important;
+	font-size:13px !important;
+}
+
+* .jqgrid-overlay iframe {
+	width: expression(this.parentNode.offsetWidth + 'px');
+	height: expression(this.parentNode.offsetHeight + 'px');
+}
+
+* iframe.jqm {
+	width: expression(this.parentNode.offsetWidth + 'px');
+	height: expression(this.parentNode.offsetHeight + 'px');
+}
+.ui-jqgrid .ui-jqgrid-title-rtl {
+	float: right;
+	margin: .1em 0 .2em;
+}
+
+.norecords {
+    border-width: 2px ;
+    font-weight: bold;
+    left: 45%;
+    margin: 5px;
+    padding: 6px;
+    text-align: center;
+    top: 45%;
+    width: auto;
+    z-index: 102;
+}
+
+/* jquery-ui diff */
+/*修改了header背景*/
+.ui-widget-header {
+	background:#298bd0 !important;
+}
+.ui-widget-content a {
+	color: rgb(0, 0, 238) !important;
+}
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {
+	background: #dfeffc !important;
+}
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus {
+	background: #d0e5f5 !important;
+}
+
+.ui-state-highlight,
+.ui-widget-content .ui-state-highlight,
+.ui-widget-header .ui-state-highlight {
+	border: 1px solid #a6c9e2 !important;
+	background:#d3d3d3 !important;
+}
+
+/* Corner radius */
+/*修改了所有的圆角*/
+.ui-corner-all,
+.ui-corner-top,
+.ui-corner-left,
+.ui-corner-tl {
+	border-radius: 0 !important;
+}
+
+.ui-accordion .ui-accordion-content {
+	padding: inherit !important;
+}
+
+.ui-autocomplete {
+	height: 250px;
+	overflow-y:scroll;
+}
+.ui-autocomplete .ui-menu-item a{
+	color: #000000 !important;
+}
+.ui-datepicker {
+	z-index:9999 !important;
+}
+.ui-dialog {
+	z-index: 1000 !important;
+}
+.ui-tabs .ui-tabs-panel {
+	padding: inherit !important;
+}
+
+.ui-widget input,
+.ui-widget select,
+.ui-widget textarea,
+.ui-widget button {
+	font-size: 1em !important;
+}
+
+/*overwrite button style*/
+.ui-button,.ui-button.ui-state-default,.fm-button.ui-state-default {
+	background: #3498db !important;
+	color:#fff !important;
+} 
+
+.ui-button:hover, .ui-button:focus, .ui-button.ui-state-hover, .fm-button.ui-state-default:hover,, .fm-button.ui-state-default:focus{
+    background-color: #0A71B7 !important;/*#0A71B7 1F86CC*/
+    -webkit-transition: 0.25s ;
+    -moz-transition: 0.25s;
+    -o-transition: 0.25s;
+    transition: 0.25s ;
+    -webkit-backface-visibility: hidden;
+ }
+
+.ui-button:active, .ui-button.active, .fm-button.ui-state-default:active{
+    background-color: #2c3e50 !important;
+    color: rgba(255, 255, 255, 0.75) !important;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none; 
+}
+.ui-button.disabled, .ui-button[disabled] {
+    background-color: #95a5a6 !important;
+}
+
+/*标签页tabs  style*/
+.ui-tabs-nav .ui-state-default a, .ui-tabs-nav .ui-state-default a:link,.ui-tabs-nav .ui-state-default a:visited {
+    color: #2e6e9e !important;
+    text-decoration: none !important;
+}
+.ui-tabs-nav .ui-state-active a,
+.ui-tabs-nav .ui-state-active a:link,
+.ui-tabs-nav .ui-state-active a:visited {
+	color: #e17009 !important;
+	text-decoration: none !important;
+}

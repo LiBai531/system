@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-3.2.xsd
+	http://www.springframework.org/schema/mvc
+	http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd" default-lazy-init="true">
+	<!-- 注解扫描包 -->
+	<context:component-scan base-package="com.physics.controller" />
+	<!-- 开启注解 -->
+	<mvc:annotation-driven>
+		<!-- 解决@ResponseBody乱码 -->
+		<mvc:message-converters>
+			<bean class="org.springframework.http.converter.StringHttpMessageConverter"> 
+				<property name = "supportedMediaTypes">  
+                     <list>  
+                         <value>text/plain;charset=UTF-8</value>  
+                     </list>  
+                </property>  
+			</bean>  
+		</mvc:message-converters> 
+	</mvc:annotation-driven>
+	<!-- 静态资源(js/image)的访问 -->
+	<mvc:resources location="/js/" mapping="/js/**" />
+	<mvc:resources location="/js/uploadify/" mapping="/js/uploadify/**" />
+	<mvc:resources location="/css/" mapping="/css/**" />
+	<mvc:resources location="/img/" mapping="/img/**" />
+	<mvc:resources location="/images/" mapping="/images/**" />
+	<mvc:resources location="/css/" mapping="/css/**" />
+	<mvc:resources location="/css/redmond/" mapping="/css/redmond/**" />
+	<mvc:resources location="/css/redmond/images/" mapping="/css/redmond/images/**" />
+	<mvc:resources location="/css/zTreeStyle/" mapping="/css/zTreeStyle/**" />
+	<mvc:resources location="/css/zTreeStyle/" mapping="/css/zTreeStyle/**" />
+	<mvc:resources location="/css/zTreeStyle/img/" mapping="/css/zTreeStyle/img/**" />
+	<mvc:resources location="/css/zTreeStyle/img/diy/" mapping="/css/zTreeStyle/img/diy/**" />
+	<mvc:resources location="/ueditor/" mapping="/ueditor/**" />
+	<mvc:resources location="/ueditor/themes/default/css/" mapping="/ueditor/themes/default/css/**" />
+	<mvc:resources location="/COLLECTION/" mapping="/COLLECTION/**" />
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/"></property>
+		<property name="suffix" value=".jsp"></property>
+	</bean>
+	
+	<!--  这里申明的id必须为multipartResolver,用于文件上传-->
+	<bean id="multipartResolver"
+	    class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	
+	    <!-- one of the properties available; the maximum file size in bytes -->
+	    <property name="maxUploadSize" value="100000000000"/>
+	</bean>	
+</beans>
